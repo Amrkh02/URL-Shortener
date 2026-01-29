@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>URL Shortener</h1>
+
+    <form id="shortenForm">
+      <input id="urlInput" type="url" placeholder="https://example.com/long/path" required />
+      <div class="row">
+        <input id="customInput" type="text" placeholder="Optional: custom alias (e.g., my-brand)" />
+        <button id="generateBtn" type="button">Generate</button>
+        <button type="submit">Shorten ✅</button>
+      </div>
+    </form>
+
+    <section id="result" class="hidden">
+      <p>Short URL: <a id="shortLink" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+      <p id="meta"></p>
+      <button id="copyBtn">Copy</button>
+      <button id="analyticsBtn">View Analytics</button>
+    </section>
+
+    <section id="lookup">
+      <h2>Resolve short URL</h2>
+      <form id="resolveForm">
+        <input id="resolveInput" placeholder="Short id or short URL (e.g., abc1234 or https://host/abc1234)" required />
+        <button type="submit">Resolve</button>
+      </form>
+      <div id="resolveResult" class="hidden"></div>
+    </section>
+
+    <section id="analytics" class="hidden">
+      <h2>Analytics</h2>
+      <div id="analyticsSummary"></div>
+      <div id="analyticsDetails"></div>
+    </section>
+
+    <section id="error" class="hidden"></section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
